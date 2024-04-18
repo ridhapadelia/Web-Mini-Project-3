@@ -29,10 +29,9 @@ $k = mysqli_fetch_object($kategori);
 
    <header>
       <div class="container1">
-         <h1><a href="adminpage.php">BookStore</a></h1>
+         <h1><a href="adminpage.php">RynBooks</a></h1>
          <ul>
             <li><a href="adminpage.php">AdminPage</a></li>
-            <li><a href="profil.php">Profil</a></li>
             <li><a href="category.php">Kategori</a></li>
             <li><a href="data-produk.php">Produk</a></li>
             <li><a href="logout.php">Keluar</a></li>
@@ -69,7 +68,7 @@ $k = mysqli_fetch_object($kategori);
 
    <footer>
       <div class="container1">
-         <small>Copyright &copy; 2020 - BookStore.</small>
+         <small>Copyright &copy; 2020 - RynBooks.</small>
       </div>
    </footer>
 </body>

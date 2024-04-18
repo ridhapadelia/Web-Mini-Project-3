@@ -24,10 +24,9 @@ if(!isset($_SESSION['admin_name'])){
 
    <header>
       <div class="container1">
-         <h1><a href="adminpage.php">BookStore</a></h1>
+         <h1><a href="adminpage.php">RynBooks</a></h1>
          <ul>
             <li><a href="adminpage.php">AdminPage</a></li>
-            <li><a href="profil.php">Profil</a></li>
             <li><a href="category.php">Kategori</a></li>
             <li><a href="data-buku.php">Produk</a></li>
             <li><a href="logout.php">Keluar</a></li>
@@ -35,8 +34,7 @@ if(!isset($_SESSION['admin_name'])){
       </div>
    </header>
 
-   <div class="section">
-      <div class="container1">
+   <div class="add-category">
          <h3>Tambah Kategori</h3>
          <div class="box">
             <form action="" method="POST"> 
@@ -60,11 +58,5 @@ if(!isset($_SESSION['admin_name'])){
          </div>
    </div>
 
-
-   <footer>
-      <div class="container1">
-         <small>Copyright &copy; 2020 - BookStore.</small>
-      </div>
-   </footer>
 </body>
 </html>

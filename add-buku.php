@@ -24,10 +24,9 @@ if(!isset($_SESSION['admin_name'])){
 
    <header>
       <div class="container1">
-         <h1><a href="adminpage.php">BookStore</a></h1>
+         <h1><a href="adminpage.php">RynBooks</a></h1>
          <ul>
             <li><a href="adminpage.php">AdminPage</a></li>
-            <li><a href="profil.php">Profil</a></li>
             <li><a href="category.php">Kategori</a></li>
             <li><a href="data-buku.php">Produk</a></li>
             <li><a href="logout.php">Keluar</a></li>
@@ -36,12 +35,12 @@ if(!isset($_SESSION['admin_name'])){
    </header>
 
    <div class="section">
-      <div class="container1">
+      <div class="container2">
          <h3>Tambah Buku</h3>
          <div class="box">
             <form action="" method="POST" enctype="multipart/form-data"> 
                 <select class="input-control" name="kategori" required>
-                    <option value="">--Pilih--</option>
+                    <option value="">--Kategori--</option>
                     <?php
                         $kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id DESC");
                         while($r = mysqli_fetch_array($kategori)){
@@ -49,13 +48,12 @@ if(!isset($_SESSION['admin_name'])){
                     <option value="<?php echo $r['category_id'] ?>"><?php echo $r['category_name'] ?></option>
                     <?php } ?>
                 </select>
-
                 <input type="text" name="nama" class="input-control" placeholder="Judul Buku" required>
                 <input type="text" name="harga" class="input-control" placeholder="Harga" required>
                 <input type="file" name="gambar" class="input-control" required>
                 <textarea class="input-control" name="deskripsi" placeholder="Deskripsi"></textarea>
                 <select class="input-control" name="status">
-                <option value="">--Pilih--</option>
+                <option value="">--Status Buku--</option>
                 <option value="1">--Aktif--</option>
                 <option value="0">--Tidak Aktif--</option>
                 </select>
@@ -105,11 +103,11 @@ if(!isset($_SESSION['admin_name'])){
                                 ) ");
 
                         if($insert){
-                            echo 'simpan data berhasil';
+                            echo '<script>alert("Buku berhasil ditambahkan")</script>';
                         }else{
                             echo 'gagal' .mysqli_error($conn);
                         }
-                   }
+                     }
                 }
             ?>
          </div>

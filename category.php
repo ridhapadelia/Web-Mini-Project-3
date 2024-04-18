@@ -24,10 +24,9 @@ if(!isset($_SESSION['admin_name'])){
 
    <header>
       <div class="container1">
-         <h1><a href="adminpage.php">BookStore</a></h1>
+         <h1><a href="adminpage.php">RynBooks</a></h1>
          <ul>
-            <li><a href="adminpage.php">AdminPage</a></li>
-            <li><a href="profil.php">Profil</a></li>
+            <li><a href="admin_page.php">AdminPage</a></li>
             <li><a href="category.php">Kategori</a></li>
             <li><a href="data-buku.php">Produk</a></li>
             <li><a href="logout.php">Keluar</a></li>
@@ -35,8 +34,7 @@ if(!isset($_SESSION['admin_name'])){
       </div>
    </header>
 
-   <div class="section">
-      <div class="container1">
+   <div class="category">
          <h3>Data Kategori</h3>
          <div class="box">
             <p><a href="add-category.php">Tambah Kategori</a></p>
@@ -52,6 +50,7 @@ if(!isset($_SESSION['admin_name'])){
                     <?php
                         $no = 1;
                         $kategori =mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id DESC");
+                        if(mysqli_num_rows($kategori) > 0){
                         while($row = mysqli_fetch_array($kategori)){
                     ?>
                     <tr>
@@ -61,15 +60,15 @@ if(!isset($_SESSION['admin_name'])){
                             <a href="edit-category.php?id=<?php echo $row['category_id'] ?>">Edit</a> || <a href="delete-category.php?idk=<?php echo $row['category_id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                         </td>
                     </tr>
-                    <?php } ?>
+                    <?php }}else{ ?>
+                     <tr>
+                        <td colspan="3">Tidak ada data</td>
+                     </tr>
+                     <?php } ?>
                 </tbody>
             </table>
          </div>
    </div>
-   <footer>
-      <div class="container1">
-         <small>Copyright &copy; 2020 - BookStore.</small>
-      </div>
-   </footer>
+
 </body>
 </html>

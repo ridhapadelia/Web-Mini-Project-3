@@ -24,19 +24,18 @@ if(!isset($_SESSION['admin_name'])){
 
    <header>
       <div class="container1">
-         <h1><a href="adminpage.php">BookStore</a></h1>
+         <h1><a href="adminpage.php">RynBooks</a></h1>
          <ul>
-            <li><a href="adminpage.php">AdminPage</a></li>
-            <li><a href="profil.php">Profil</a></li>
+            <li><a href="admin_page.php">AdminPage</a></li>
             <li><a href="category.php">Kategori</a></li>
-            <li><a href="data-produk.php">Produk</a></li>
+            <li><a href="data-buku.php">Produk</a></li>
             <li><a href="logout.php">Keluar</a></li>
          </ul>
       </div>
    </header>
 
    <div class="section">
-      <div class="container1">
+      <div class="container2">
          <h3>AdminPage</h3>
          <div class="box">
             <h4>Selamat Datang Admin!</h4>
